@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+
+    xmlns:android="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res/android"
+    card_view:layout_width="match_parent"
+    card_view:layout_height="match_parent"
+    >
+
+    <include
+        card_view:id="@+id/layoutNoInternet"
+        layout="@layout/raw_no_internet_connection"
+        card_view:layout_width="match_parent"
+        card_view:layout_height="match_parent" />
+
+    <RelativeLayout
+        card_view:id="@+id/container"
+        card_view:layout_width="match_parent"
+        card_view:layout_height="match_parent"
+        android:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.ViewPager
+            card_view:id="@+id/pagerPlayer"
+            card_view:layout_width="match_parent"
+            card_view:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        card_view:id="@+id/fabFollow"
+        card_view:layout_width="wrap_content"
+        card_view:layout_height="wrap_content"
+        card_view:layout_margin="16dp"
+        card_view:clickable="true"
+        card_view:src="@drawable/ic_home_black_24dp"
+        card_view:visibility="gone"
+        android:layout_anchor="@+id/app_bar_layout"
+        android:layout_anchorGravity="bottom" />
+
+    <!-- <android.support.design.widget.FloatingActionButton
+         card_view:id="@+id/fabShare"
+         card_view:layout_width="wrap_content"
+         card_view:layout_height="wrap_content"
+         card_view:layout_alignParentBottom="true"
+         card_view:layout_alignParentRight="true"
+         android:layout_anchorGravity="bottom"
+         card_view:layout_margin="16dp"
+         card_view:clickable="true"
+         card_view:fabSize="0"
+         card_view:src="@drawable/ic_play_circle_24dp"
+         card_view:visibility="gone" />
+ -->
+    <pasu.vadivasal.view.TextView
+        card_view:id="@+id/txt_error"
+        card_view:layout_width="match_parent"
+        card_view:layout_height="wrap_content"
+        card_view:layout_centerInParent="true"
+        card_view:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+        card_view:padding="@dimen/dp_20"
+        card_view:text="@string/no_media_found"
+        card_view:textColor="@color/colorPrimaryDark"
+        card_view:textSize="@dimen/sp_20"
+        card_view:visibility="gone" />
+
+    <RelativeLayout
+        card_view:layout_width="match_parent"
+        card_view:layout_height="match_parent"
+        card_view:background="@color/green_text"
+        card_view:visibility="gone" />
+
+    <pasu.vadivasal.view.Button
+        card_view:id="@+id/btnLeaveTeam"
+        card_view:layout_width="match_parent"
+        card_view:layout_height="wrap_content"
+        card_view:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+        card_view:text="@string/remove_me"
+        card_view:textColor="@color/gray_divider"
+        card_view:textSize="@dimen/sp_16"
+        card_view:visibility="gone" />
+
+    <android.support.design.widget.AppBarLayout
+        card_view:id="@+id/app_bar_layout"
+        card_view:layout_width="match_parent"
+        card_view:layout_height="wrap_content"
+        card_view:background="@color/white"
+        card_view:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            card_view:id="@+id/collapsing_toolbar"
+            card_view:layout_width="match_parent"
+            android:layout_scrollFlags="scroll|snap"
+            card_view:layout_height="270dp"
+            android:collapsedTitleTextAppearance="@style/AppTheme_tool"
+            android:contentScrim="?attr/colorPrimary"
+            android:expandedTitleTextAppearance="@style/AppTheme_tool_exp"
+          >
+
+            <RelativeLayout
+                card_view:id="@+id/layoutcollapse"
+                card_view:layout_width="match_parent"
+                card_view:layout_height="match_parent"
+                card_view:background="@color/white"
+                card_view:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                card_view:orientation="vertical"
+                android:layout_collapseMode="parallax">
+
+                <ImageView
+                    card_view:id="@+id/imgBlurBackground"
+                    card_view:layout_width="match_parent"
+                    card_view:layout_height="match_parent"
+                    card_view:scaleType="centerCrop" />
+
+                <ImageView
+                    card_view:id="@+id/img_shadow"
+                    card_view:layout_width="match_parent"
+                    card_view:layout_height="match_parent"
+                    card_view:src="@color/white" />
+
+                <LinearLayout
+                    card_view:id="@+id/layCenter"
+                    card_view:layout_width="match_parent"
+                    card_view:layout_height="match_parent"
+                    card_view:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                    card_view:orientation="vertical"
+                    card_view:layout_below="@+id/ivInfo"
+                    card_view:layout_alignParentLeft="true"
+                    card_view:layout_alignParentStart="true">
+
+                    <RelativeLayout
+
+                        card_view:layout_width="match_parent"
+                        card_view:layout_height="wrap_content">
+
+                        <pasu.vadivasal.view.CircleImageView
+                            card_view:id="@+id/imgPlayer"
+                            card_view:layout_width="90dp"
+                            card_view:layout_height="90dp"
+                            card_view:layout_centerHorizontal="true"
+                            card_view:layout_marginTop="@dimen/dp_20"
+                            card_view:gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+                            card_view:src="@drawable/download"
+                            android:civ_fill_color="@color/colorPrimary" />
+
+                        <ImageView
+                            card_view:id="@+id/imgPremiumIcon"
+                            card_view:layout_width="20dp"
+                            card_view:layout_height="20dp"
+                            card_view:layout_alignRight="@+id/imgPlayer"
+                            card_view:layout_alignTop="@+id/imgPlayer"
+                            card_view:scaleType="centerCrop"
+                            card_view:visibility="gone" />
+                    </RelativeLayout>
+
+
+                    <pasu.vadivasal.view.TextView
+                        card_view:id="@+id/tvdetail"
+                        card_view:layout_width="wrap_content"
+                        card_view:layout_height="wrap_content"
+                        card_view:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                        card_view:paddingLeft="@dimen/dp_10"
+                        card_view:paddingRight="@dimen/dp_10"
+                        card_view:textColor="@color/colorPrimary"
+                        card_view:textSize="15sp"
+                        card_view:visibility="gone" />
+
+                    <pasu.vadivasal.view.TextView
+                        card_view:id="@+id/txt_date"
+                        card_view:layout_width="wrap_content"
+                        card_view:layout_height="wrap_content"
+                        card_view:layout_marginBottom="@dimen/dp_15"
+                        card_view:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                        card_view:paddingLeft="@dimen/dp_10"
+                        card_view:paddingRight="@dimen/dp_10"
+                        card_view:textColor="@color/colorPrimary"
+                        card_view:textSize="@dimen/sp_16"
+                        card_view:visibility="gone" />
+
+                    <View
+                        card_view:id="@+id/viewDivider"
+                        card_view:layout_width="match_parent"
+                        card_view:layout_height="5dp"
+                        card_view:layout_marginLeft="@dimen/dp_15"
+                        card_view:layout_marginRight="@dimen/dp_15"
+                        card_view:background="@color/white_10_opacity" />
+
+                    <LinearLayout
+                        card_view:layout_width="wrap_content"
+                        card_view:layout_height="wrap_content"
+                        card_view:layout_gravity="center"
+                        card_view:layout_marginTop="5dp"
+                        card_view:orientation="horizontal"
+                        card_view:visibility="visible">
+
+                        <android.support.v7.widget.CardView
+                            card_view:id="@+id/card_challange"
+                            card_view:layout_width="wrap_content"
+                            card_view:layout_height="wrap_content"
+                            card_view:layout_marginRight="10dp"
+                            card_view:visibility="gone"
+                            android:cardBackgroundColor="@color/red_text"
+                            android:cardCornerRadius="3dp"
+                            android:cardElevation="0dp"
+                            android:cardUseCompatPadding="false">
+
+                            <pasu.vadivasal.view.TextView
+                                card_view:id="@+id/txtChallange"
+                                card_view:layout_width="wrap_content"
+                                card_view:layout_height="wrap_content"
+                                card_view:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                                card_view:padding="@dimen/dp_7"
+                                card_view:text="challenge"
+                                card_view:textAllCaps="true"
+                                card_view:textColor="@color/colorPrimary"
+                                card_view:textSize="@dimen/sp_16"
+                                card_view:visibility="visible" />
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            card_view:id="@+id/card_Follow"
+                            card_view:layout_width="wrap_content"
+                            card_view:layout_height="wrap_content"
+                            card_view:layout_marginBottom="@dimen/dp_15"
+                            card_view:minWidth="100dp"
+                            android:cardBackgroundColor="@color/colorAccent"
+                            android:cardCornerRadius="3dp"
+                            android:cardElevation="0dp"
+                            android:cardPreventCornerOverlap="false"
+                            android:cardUseCompatPadding="false">
+
+                            <pasu.vadivasal.view.TextView
+                                card_view:id="@+id/btnFollow"
+                                card_view:layout_width="match_parent"
+                                card_view:layout_height="wrap_content"
+                                card_view:layout_gravity="center"
+                                card_view:gravity="center"
+                                card_view:padding="@dimen/dp_7"
+                                card_view:text="@string/follow"
+                                card_view:textAllCaps="true"
+                                card_view:textColor="@color/white"
+                                card_view:textSize="@dimen/sp_16" />
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <pasu.vadivasal.view.TextView
+                        card_view:id="@+id/tvPlayerName"
+                        card_view:layout_width="wrap_content"
+                        card_view:layout_height="wrap_content"
+                        card_view:ellipsize="end"
+                        card_view:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                        card_view:maxLines="2"
+                        card_view:paddingLeft="@dimen/dp_10"
+                        card_view:paddingRight="@dimen/dp_10"
+                        card_view:paddingBottom="@dimen/dp_10"
+                        card_view:text="Nagarajan S"
+                        card_view:textColor="@color/colorPrimary"
+                        card_view:textSize="@dimen/sp_24"
+                        card_view:visibility="visible" />
+
+                    <RelativeLayout
+                        card_view:layout_width="match_parent"
+                        card_view:layout_height="wrap_content"
+                        card_view:layout_below="@+id/layCenter">
+
+                        <pasu.vadivasal.view.TextView
+                            card_view:id="@+id/tvViewer"
+                            card_view:layout_width="wrap_content"
+                            card_view:layout_height="wrap_content"
+                            card_view:layout_centerInParent="true"
+                            card_view:drawableLeft="@drawable/ic_bull_logo"
+                            card_view:drawablePadding="@dimen/dp_8"
+                            card_view:paddingBottom="@dimen/dp_15"
+                            card_view:textColor="@color/colorPrimary"
+                            card_view:textSize="@dimen/sp_16"
+                            card_view:visibility="gone" />
+
+                        <!--  <com.like.LikeButton
+                            card_view:id="@+id/ivFav"
+                            card_view:layout_width="wrap_content"
+                            card_view:layout_height="wrap_content"
+                            card_view:layout_alignParentRight="true"
+                            card_view:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+                            card_view:circle_end_color="@color/white"
+                            card_view:circle_start_color="@color/orange"
+                            card_view:dots_primary_color="@color/orange_dark"
+                            card_view:dots_secondary_color="@color/white_50_opacity"
+                            card_view:like_drawable="@drawable/star_filled"
+                            card_view:paddingBottom="@dimen/dp_15"
+                            card_view:unlike_drawable="@drawable/star"
+                            card_view:visibility="gone" />-->
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <ImageView
+                    card_view:id="@+id/ivInfo"
+                    card_view:layout_width="wrap_content"
+                    card_view:layout_height="wrap_content"
+                    card_view:layout_alignParentRight="true"
+                    card_view:layout_alignParentTop="true"
+                    card_view:layout_marginRight="@dimen/dp_8"
+                    card_view:layout_marginTop="@dimen/dp_8"
+                    card_view:padding="@dimen/dp_15"
+                    card_view:scaleType="centerInside"
+                    card_view:src="@drawable/download"
+                    card_view:visibility="gone" />
+                <View
+                    card_view:layout_width="match_parent"
+                    card_view:layout_height="1dp"
+                    card_view:layout_above="@+id/follow_lay"
+                    card_view:background="@color/background_color" />
+
+                <LinearLayout
+                    card_view:id="@+id/follow_lay"
+                    card_view:layout_width="match_parent"
+                    card_view:layout_height="50dp"
+                    card_view:layout_alignParentBottom="true"
+                    card_view:background="@color/white">
+                    <View
+                        card_view:layout_width="1dp"
+                        card_view:layout_height="match_parent"
+                        card_view:background="@color/background_color" />
+
+                    <LinearLayout
+                        card_view:layout_width="0dp"
+                        card_view:layout_height="match_parent"
+                        card_view:layout_gravity="center"
+                        card_view:layout_weight="1">
+
+                        <TextView
+                            card_view:layout_width="wrap_content"
+                            card_view:layout_height="match_parent"
+                            card_view:gravity="center_vertical"
+                            card_view:paddingLeft="25dp"
+                            card_view:text="5"
+                            card_view:paddingRight="8dp"
+                            card_view:textColor="@color/colorPrimary"
+                            card_view:textSize="20sp" />
+
+                        <TextView
+                            card_view:layout_width="match_parent"
+                            card_view:layout_height="match_parent"
+                            card_view:gravity="center_vertical"
+                            card_view:text="@string/followings"
+                            card_view:textColor="@color/header_color" />
+                    </LinearLayout>
+
+                    <View
+                        card_view:layout_width="1dp"
+                        card_view:layout_height="match_parent"
+                        card_view:background="@color/background_color" />
+
+
+                    <LinearLayout
+                        card_view:layout_width="0dp"
+                        card_view:layout_height="match_parent"
+                        card_view:layout_gravity="center"
+                        card_view:layout_weight="1">
+
+                        <TextView
+                            card_view:layout_width="wrap_content"
+                            card_view:layout_height="match_parent"
+                            card_view:gravity="center_vertical"
+                            card_view:paddingLeft="25dp"
+                            card_view:text="35"
+                            card_view:paddingRight="8dp"
+                            card_view:textColor="@color/colorPrimary"
+                            card_view:textSize="20sp" />
+
+                        <TextView
+                            card_view:layout_width="match_parent"
+                            card_view:layout_height="match_parent"
+                            card_view:gravity="center_vertical"
+                            card_view:text="@string/followers"
+                            card_view:textColor="@color/header_color" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                card_view:id="@+id/toolbar"
+                card_view:layout_width="match_parent"
+
+                card_view:layout_height="50dp"
+                card_view:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_collapseMode="pin"
+                android:titleTextColor="@color/colorPrimary" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            card_view:id="@+id/tabLayoutPlayer"
+            card_view:layout_width="match_parent"
+            card_view:layout_height="wrap_content"
+            card_view:layout_below="@+id/tvSummary"
+            card_view:background="@color/white"
+            card_view:minHeight="?attr/actionBarSize"
+            card_view:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:tabIndicatorColor="@color/colorAccent"
+            android:tabIndicatorHeight="4dp"
+            android:tabSelectedTextColor="@color/colorPrimaryDark"
+            android:tabTextColor="@color/gray_divider" />
+    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>
